@@ -1,9 +1,10 @@
 import { Button } from "react-bootstrap";
 import React, { Component } from "react";
+import MainNavbar from "./navbar/MainNavbar";
 
 class Counter extends Component {
   state = {
-    count: 10,
+    value: this.props.value,
     imageUrl: "https://picsum.photos/200",
   };
 
@@ -12,19 +13,28 @@ class Counter extends Component {
     fontWeight: "bold",
   };
 
+  handleIncrement = () => {
+    this.setState({ value: this.state.value + 1 });
+  };
+
   render() {
     return (
       <div>
         <span style={this.styles} className="badge badge-primary m-2">
           {this.formatCount()}
         </span>
-        <Button className="btn btn-secondary btn-sm">funded project (s)</Button>
+        <Button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          funded project (s)
+        </Button>
       </div>
     );
   }
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 }
 
