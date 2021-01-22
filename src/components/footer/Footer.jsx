@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export class Footer extends Component {
   render() {
@@ -11,7 +12,10 @@ export class Footer extends Component {
           <Nav inline>© Crowdax 2020. All Rights Reserved. </Nav>
           <Nav className="ml-auto">
             {" "}
-            Sponsored by Ortus Africa Capital | Terms & Conditions
+            <a href="https://www.ortusafricacapital.com/" target="_blank">
+              Sponsored by Ortus Africa Capital
+            </a>{" "}
+            | Terms & Conditions
           </Nav>
         </Navbar>
       </div>

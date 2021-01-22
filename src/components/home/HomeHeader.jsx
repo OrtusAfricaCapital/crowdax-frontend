@@ -15,7 +15,16 @@ import {
   Container,
 } from "react-bootstrap";
 import search_icon from "../../assests/search_icon.png";
+
 export class HomeHeader extends Component {
+  state = {
+    // homeStats: [
+    //   { id: 1, heading: "Featured Project", content: "the97Fund" },
+    //   { id: 2, heading: "Total Investment", content: 323 },
+    //   { id: 3, heading: "Funded Projects", content: 100 },
+    //   { id: 4, heading: "Live Campaigns", content: 322 },
+    // ],
+  };
   render() {
     return (
       <Container>
@@ -40,7 +49,9 @@ export class HomeHeader extends Component {
         <p />
         <Row>
           <Col md={{ span: 5, offset: 5 }}>
-            <Button variant="secondary">Search </Button>{" "}
+            <Button variant="info" size="lg">
+              Search{" "}
+            </Button>{" "}
           </Col>
         </Row>
         <p />
