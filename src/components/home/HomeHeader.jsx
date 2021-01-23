@@ -6,24 +6,22 @@ import {
   FormControl,
   InputGroup,
   Row,
-  Badge,
   ButtonGroup,
   DropdownButton,
   Dropdown,
-  Card,
-  CardGroup,
   Container,
 } from "react-bootstrap";
 import search_icon from "../../assests/search_icon.png";
-
+import sort_icon from "../../assests/sort_white.svg";
+import Headlines from "../home/Headlines";
 export class HomeHeader extends Component {
   state = {
-    // homeStats: [
-    //   { id: 1, heading: "Featured Project", content: "the97Fund" },
-    //   { id: 2, heading: "Total Investment", content: 323 },
-    //   { id: 3, heading: "Funded Projects", content: 100 },
-    //   { id: 4, heading: "Live Campaigns", content: 322 },
-    // ],
+    headlines: [
+      { id: 1, heading: "Featured Project", content: "the97Fund" },
+      { id: 2, heading: "Total Investment", content: 323 },
+      { id: 3, heading: "Funded Projects", content: 100 },
+      { id: 4, heading: "Live Campaigns", content: 322 },
+    ],
   };
   render() {
     return (
@@ -35,12 +33,17 @@ export class HomeHeader extends Component {
               <InputGroup size="lg">
                 <InputGroup.Prepend>
                   <InputGroup.Text>
-                    <img src={search_icon} width="30px" height="30px" />
+                    <img
+                      src={search_icon}
+                      width="30px"
+                      height="30px"
+                      alt="search"
+                    />
                   </InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
                   id="inlineFormInputGroup"
-                  placeholder="Discover vaible businesses"
+                  placeholder="Invest in a business"
                 />
               </InputGroup>
             </Form>
@@ -67,34 +70,26 @@ export class HomeHeader extends Component {
         </Row>
         <p className="p-5" />
         <Row>
-          <Col xs align="center">
-            <h4>Featured Investment</h4>
-            <h3>the97Fund</h3>
-          </Col>
-          <Col xs align="center">
-            <h4>Total Investment</h4>
-            <h2>399</h2>
-          </Col>
-          <Col xs align="center">
-            <h4>Funded Projects</h4>
-            <h2>41</h2>
-          </Col>
-          <Col xs align="center">
-            <h4>Live Campaigns</h4>
-            <h2>15</h2>
-          </Col>
+          <Headlines headlines={this.state.headlines} />
         </Row>
+        <p className="p-2" />
         <Row>
-          <Col>
+          <Col sm={9}>
             <DropdownButton
-              as={ButtonGroup}
-              title="Sort By"
               id="bg-vertical-dropdown-1"
-              style={{ width: "10rem" }}
+              as={ButtonGroup}
+              variant="info"
+              size="lg"
+              drop="right"
             >
               <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
               <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
             </DropdownButton>
+          </Col>
+          <Col sm={3}>
+            <Button Badge variant="info" size="lg">
+              Active Campaigns
+            </Button>
           </Col>
         </Row>
       </Container>

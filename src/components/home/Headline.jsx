@@ -1,16 +1,21 @@
 import React, { Component } from "react";
+import { Col } from "react-bootstrap";
 
 class Headline extends Component {
-  state = {
-    heading: this.props.heading,
-  };
   render() {
     return (
       <div>
-        <span>{this.state.heading}</span>
+        <Col style={headlineStyle}>
+          <h2>{this.props.headline.heading}</h2>
+          <h4>{this.props.headline.content}</h4>
+        </Col>
       </div>
     );
   }
 }
+
+const headlineStyle = {
+  alignText: "center",
+};
 
 export default Headline;

@@ -1,20 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Row,
-  Badge,
-  ButtonGroup,
-  DropdownButton,
-  Dropdown,
-  Card,
-  CardGroup,
-  Container,
-  Image,
-} from "react-bootstrap";
+import { Button, Col, Form, Row, Container, Image } from "react-bootstrap";
 import googleIcon from "../../assests/google_icon.svg";
 import facebookIcon from "../../assests/facebook_icon.svg";
 import twitterIcon from "../../assests/twitter_icon.svg";
