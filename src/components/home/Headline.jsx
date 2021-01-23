@@ -5,9 +5,9 @@ class Headline extends Component {
   render() {
     return (
       <div>
-        <Col style={headlineStyle}>
-          <h2>{this.props.headline.heading}</h2>
-          <h4>{this.props.headline.content}</h4>
+        <Col md="auto" style={headlineStyle}>
+          <h4>{this.props.headline.heading}</h4>
+          <h2>{this.props.headline.content}</h2>
         </Col>
       </div>
     );
@@ -16,6 +16,9 @@ class Headline extends Component {
 
 const headlineStyle = {
   alignText: "center",
+  border: "2px #ccc dotted",
+  marginRight: "45px",
+  align: "center",
 };
 
 export default Headline;

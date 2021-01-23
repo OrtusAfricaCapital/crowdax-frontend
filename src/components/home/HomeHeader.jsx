@@ -69,7 +69,7 @@ export class HomeHeader extends Component {
           </Col>
         </Row>
         <p className="p-5" />
-        <Row>
+        <Row className="justify-content-center">
           <Headlines headlines={this.state.headlines} />
         </Row>
         <p className="p-2" />
@@ -82,8 +82,9 @@ export class HomeHeader extends Component {
               size="lg"
               drop="right"
             >
-              <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
+              <Dropdown.Item eventKey="1">Most Funded</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Latest</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Rated</Dropdown.Item>
             </DropdownButton>
           </Col>
           <Col sm={3}>
