@@ -12,19 +12,19 @@ export class App extends Component {
   state = {
     campaign: [
       {
-        image: "",
+        logo: "",
         title: "The97fund",
         category: "Innovation",
         description:
           "(Short Description) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-        amount_raised: "20000",
-        target_amount: "1000000",
-        duration: "30days",
-        investors: "2000",
+        amount_raised: 200000,
+        target_amount: 25000000,
+        duration: "30 days",
+        investors: 50,
         majorInvestor: "future fund",
       },
       {
-        image: "",
+        logo: "",
         title: "Ortus Africa",
         category: "Manfacturing",
         description:
