@@ -9,6 +9,11 @@ class Campaign extends Component {
       (campaign.amount_raised / campaign.amount_targeted) * 100
     );
 
+    var amount_targeted =
+      campaign.amount_targeted / 1000000 >= 1
+        ? campaign.amount_targeted / 1000000 + "M "
+        : campaign.amount_targeted;
+
     //calculations of the days left for the campaigns to end
     var date1 = new Date(campaign.end_date);
     var date2 = new Date();
@@ -16,7 +21,7 @@ class Campaign extends Component {
     var daysLeft = Math.ceil(difference / (1000 * 3600 * 24));
 
     return (
-      <Col sm={4}>
+      <Col sm={4} style={campaignStyle}>
         <img
           src={campaign.image}
           className="img-thumbnail"
@@ -39,19 +44,19 @@ class Campaign extends Component {
         <hr className="mt-3 mb-6" />
         <Row>
           <Col className="text-left">
-            <strong>Target</strong>
+            Target
             <br />
-            {campaign.amount_targeted}/-
+            <strong>UGX {amount_targeted}</strong>
           </Col>
           <Col className="text-center">
-            <strong>Location</strong>
+            Location
             <br />
-            {campaign.location}
+            <strong>{campaign.location}</strong>
           </Col>
           <Col className="text-right">
-            <strong>Investors</strong>
+            Investors
             <br />
-            {campaign.investors}
+            <strong>{campaign.investors}</strong>
           </Col>
         </Row>
       </Col>
@@ -64,4 +69,7 @@ const daysLeftStyle = {
   background: "red",
 };
 
+const campaignStyle = {
+  paddingBottom: "20px",
+};
 export default Campaign;

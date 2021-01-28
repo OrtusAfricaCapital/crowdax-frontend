@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-
 import Campaign from "../campaigns/Campaign";
+
 class UpcomingCampaigns extends Component {
-  state = {};
   render() {
-    return this.props.campaigns.map((campaign) => (
-      <Campaign key={campaign.id} campaign={campaign} />
-    ));
+    const upcomingCampaigns = this.props.campaigns;
+    return (
+      upcomingCampaigns
+        .slice(0, 3)
+        //.sort((a, b) => b.start_date - a.start_date)
+        .map((campaign) => <Campaign key={campaign.id} campaign={campaign} />)
+    );
   }
 }
 
