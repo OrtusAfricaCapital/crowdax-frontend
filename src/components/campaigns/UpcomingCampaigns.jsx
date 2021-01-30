@@ -6,7 +6,7 @@ class UpcomingCampaigns extends Component {
     const upcomingCampaigns = this.props.campaigns;
     return (
       upcomingCampaigns
-        .slice(0, 3)
+        .slice(3, 6)
         //.sort((a, b) => b.start_date - a.start_date)
         .map((campaign) => <Campaign key={campaign.id} campaign={campaign} />)
     );

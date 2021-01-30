@@ -21,21 +21,19 @@ class MainNavbar extends Component {
             </Navbar.Brand>
           </Link>
           <Nav className="ml-auto">
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Find Active Campaigns"
-                className="mr-sm-2"
-              />
-              <Link to="/signin">
-                <Button variant="info">Login</Button>
-              </Link>
-              <Link to="/signup">
-                <Button variant="info" style={{ marginLeft: 10 }}>
-                  Signup
-                </Button>
-              </Link>
-            </Form>
+            <Nav.Link href="#invest">Invest</Nav.Link>
+            <Nav.Link>|</Nav.Link>
+            <Nav.Link href="#Raise">Raise</Nav.Link>
+          </Nav>
+          <Nav className="ml-auto">
+            <Link to="/signin">
+              <Button variant="info">Login</Button>
+            </Link>
+            <Link to="/signup">
+              <Button variant="info" style={{ marginLeft: 10 }}>
+                Signup
+              </Button>
+            </Link>
           </Nav>
         </Navbar>
       </div>
