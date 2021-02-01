@@ -10,10 +10,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 class App extends Component {
   state = {
     headlines: [
-      { id: 1, heading: "Entire Investments", content: "UGX 700,000" },
-      { id: 2, heading: "Live Campaigns", content: 27 },
-      { id: 3, heading: "Secondary Campaigns", content: 13 },
-      { id: 4, heading: "Entire deals", content: 350 },
+      { id: 1, heading: "Total Investments", content: "UGX 700,000" },
+      { id: 2, heading: "Live Investments", content: 27 },
+      { id: 3, heading: "Secondary Investments", content: 13 },
+      { id: 4, heading: "Total Investors", content: 350 },
     ],
     campaigns: [
       {

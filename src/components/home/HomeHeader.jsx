@@ -89,14 +89,14 @@ export class HomeHeader extends Component {
           </Col>
           <Col sm={3}>
             <Button Badge variant="info" size="lg">
-              Active Campaigns
+              Active Investments
             </Button>
           </Col>
         </Row>
 
         {/* The trending Campaigns  */}
         <p className="p-2" />
-        <h3>Trending Campaigns</h3>
+        <h3>Trending Investments</h3>
         <hr />
         <Container>
           <Row>
@@ -106,7 +106,7 @@ export class HomeHeader extends Component {
 
         {/* The Latest Campaigns  */}
         <p className="p-2" />
-        <h3>Latest Campaigns</h3>
+        <h3>Latest Investments</h3>
         <hr />
         <Row>
           <LatestCampaigns campaigns={this.props.campaigns} />
@@ -114,7 +114,7 @@ export class HomeHeader extends Component {
 
         {/* The upcoming Campaigns  */}
         <p className="p-2" />
-        <h3>Upcoming Campaigns</h3>
+        <h3>Upcoming Investments</h3>
         <hr />
         <Row>
           <UpcomingCampaigns campaigns={this.props.campaigns} />
