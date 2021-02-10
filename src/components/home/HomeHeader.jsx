@@ -16,6 +16,8 @@ import UpcomingCampaigns from "../campaigns/UpcomingCampaigns";
 import TrendingCampaigns from "../campaigns/TrendingCampaigns";
 import LatestCampaigns from "../campaigns/LatestCampaigns";
 import Headlines from "../home/Headlines";
+import { Link } from "react-router-dom";
+
 export class HomeHeader extends Component {
   render() {
     return (
@@ -88,9 +90,16 @@ export class HomeHeader extends Component {
             </DropdownButton>
           </Col>
           <Col sm={3}>
-            <Button Badge variant="info" size="lg">
-              Active Investments
-            </Button>
+            <Link to="/allinvestments" campaigns={this.props.campaigns}>
+              <Button
+                // campaigns={this.state.campaigns}
+                Badge
+                variant="info"
+                size="lg"
+              >
+                Active Investments
+              </Button>
+            </Link>
           </Col>
         </Row>
 

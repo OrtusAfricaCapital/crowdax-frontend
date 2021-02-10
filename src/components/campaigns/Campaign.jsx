@@ -64,11 +64,6 @@ class Campaign extends Component {
   }
 }
 
-const daysLeftStyle = {
-  align: "right",
-  background: "red",
-};
-
 const campaignStyle = {
   paddingBottom: "20px",
 };
