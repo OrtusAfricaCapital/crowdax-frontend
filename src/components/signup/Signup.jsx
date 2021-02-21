@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Col,
-  Form,
-  Row,
-  Container,
-  Image,
-  Card,
-} from "react-bootstrap";
+
+import { Button, Col, Form, Row, Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import IconsForSigning from "./IconsForSigning";
 import googleIcon from "../../assests/google_icon.svg";
@@ -39,16 +32,21 @@ class SignUp extends Component {
                   <hr />
                   <Form>
                     <Form.Group controlId="formBasicEmail">
-                      <Form.Control type="email" placeholder="Enter email" />
+                      <Form.Control type="email" placeholder="Email" required />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
-                      <Form.Control type="password" placeholder="Password" />
+                      <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        required
+                      />
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                       <Form.Control
                         type="password"
-                        placeholder="re-enter password"
+                        placeholder="Re-enter password"
+                        required
                       />
                     </Form.Group>
                     <Form.Group controlId="formBasicCheckbox">
@@ -70,7 +68,7 @@ class SignUp extends Component {
                     ))}
                   </Row>
                 </Col>
-                <Col className="w-500" style={{ maxWidth: "500px" }}>
+                <Col sm className="w-500" style={{ maxWidth: "500px" }}>
                   <h3 align="center">Hello, Investor</h3>
                   <hr />
                   <p align="justify">
@@ -94,5 +92,4 @@ class SignUp extends Component {
     );
   }
 }
-
 export default SignUp;

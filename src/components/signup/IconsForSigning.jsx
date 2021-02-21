@@ -4,7 +4,7 @@ import { Col, Image } from "react-bootstrap";
 export class IconsForSigning extends Component {
   render() {
     return (
-      <Col md={{ span: 2, offset: 0 }}>
+      <Col className="col-2">
         <Image
           src={this.props.Icon.iconUrl}
           width="50px"

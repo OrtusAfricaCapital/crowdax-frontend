@@ -5,8 +5,9 @@ import HomeHeader from "./components/home/HomeHeader";
 import Footer from "./components/footer/Footer";
 import SignIn from "./components/signin/Signin";
 import SignUp from "./components/signup/Signup";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AllCampaigns from "./components/campaigns/AllCampaigns";
+import Register from "./components/signup/Register";
 
 class App extends Component {
   state = {
@@ -113,17 +114,20 @@ class App extends Component {
   render() {
     return (
       <Router>
+        {" "}
         <div>
           <MainNavbar />
-          <Route exact path="/">
-            <HomeHeader
-              headlines={this.state.headlines}
-              campaigns={this.state.campaigns}
-            />
-          </Route>
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/allinvestments" component={AllCampaigns} />
+          <Switch>
+            <Route exact path="/">
+              <HomeHeader
+                headlines={this.state.headlines}
+                campaigns={this.state.campaigns}
+              />
+            </Route>
+            <Route path="/signin" component={SignIn} />
+            <Route path="/signup" component={Register} />
+            <Route path="/allinvestments" component={AllCampaigns} />
+          </Switch>
           <Footer />
         </div>
       </Router>
