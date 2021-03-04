@@ -90,13 +90,13 @@ export class HomeHeader extends Component {
             </DropdownButton>
           </Col>
           <Col sm={3}>
-            <Link to="/allinvestments" campaigns={this.props.campaigns}>
-              <Button
-                // campaigns={this.state.campaigns}
-                Badge
-                variant="info"
-                size="lg"
-              >
+            <Link
+              to={{
+                pathname: "/allinvestments",
+                campaigns: this.props.campaigns,
+              }}
+            >
+              <Button Badge variant="info" size="lg">
                 Active Investments
               </Button>
             </Link>

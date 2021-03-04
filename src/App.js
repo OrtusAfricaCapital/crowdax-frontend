@@ -8,6 +8,7 @@ import SignUp from "./components/signup/Signup";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AllCampaigns from "./components/campaigns/AllCampaigns";
 import Register from "./components/signup/Register";
+import InvestmentDashboard from "./components/dashboard/InvestmentDashboard";
 
 class App extends Component {
   state = {
@@ -127,6 +128,7 @@ class App extends Component {
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={Register} />
             <Route path="/allinvestments" component={AllCampaigns} />
+            <Route path="/investment" component={InvestmentDashboard} />
           </Switch>
           <Footer />
         </div>
