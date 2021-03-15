@@ -5,10 +5,10 @@ import { Nav, Navbar } from "react-bootstrap";
 export class Footer extends Component {
   render() {
     return (
-      <div>
+      <div className = "footer">
         <p className="p-2" />
         <Navbar bg="dark" variant="dark" className="text-light">
-          <Nav inline>© Crowdax 2020. All Rights Reserved. </Nav>
+          <Nav inline>© Crowdax 2021. All Rights Reserved. </Nav>
           <Nav className="ml-auto">
             {" "}
             <a
