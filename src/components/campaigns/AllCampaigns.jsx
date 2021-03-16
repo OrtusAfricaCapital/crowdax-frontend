@@ -102,7 +102,6 @@ export class AllCampaigns extends Component {
   render() {
     return (
       <Container>
-        <Row></Row>
         <Row>
           {this.state.campaigns.map((campaign) => (
             <Campaign key={campaign.id} campaign={campaign} />

@@ -5,7 +5,7 @@ class Headline extends Component {
   render() {
     return (
       <div>
-        <Col md="auto" style={headlineStyle}>
+        <Col sm xs md style={headlineStyle}>
           <h4>{this.props.headline.heading}</h4>
           <h2>{this.props.headline.content}</h2>
         </Col>

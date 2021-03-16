@@ -68,7 +68,7 @@ export class HomeHeader extends Component {
           </Col>
         </Row>
         <p className="p-5" />
-        <Row className="justify-content-center inline">
+        <Row>
           <Headlines headlines={this.props.headlines} />
         </Row>
         <p className="p-2" />
@@ -97,7 +97,7 @@ export class HomeHeader extends Component {
               }}
             >
               <Button Badge variant="info" size="lg">
-                Active Investments
+                All Pitches
               </Button>
             </Link>
           </Col>
@@ -105,7 +105,7 @@ export class HomeHeader extends Component {
 
         {/* The trending Campaigns  */}
         <p className="p-2" />
-        <h3>Trending Investments</h3>
+        <h3>Trending Pitches</h3>
         <hr />
         <Container>
           <Row>
@@ -115,7 +115,7 @@ export class HomeHeader extends Component {
 
         {/* The Latest Campaigns  */}
         <p className="p-2" />
-        <h3>Latest Investments</h3>
+        <h3>Latest Pitches</h3>
         <hr />
         <Row>
           <LatestCampaigns campaigns={this.props.campaigns} />
@@ -123,7 +123,7 @@ export class HomeHeader extends Component {
 
         {/* The upcoming Campaigns  */}
         <p className="p-2" />
-        <h3>Upcoming Investments</h3>
+        <h3>Upcoming Pitches</h3>
         <hr />
         <Row>
           <UpcomingCampaigns campaigns={this.props.campaigns} />

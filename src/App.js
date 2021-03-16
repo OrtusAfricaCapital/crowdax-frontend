@@ -114,10 +114,13 @@ class App extends Component {
   };
   render() {
     return (
+      // helps to link pages
       <Router>
         {" "}
         <div>
+          {/* Mainnavbar is reposible for showing the navbar of the app */}
           <MainNavbar />
+
           <Switch>
             <Route exact path="/">
               <HomeHeader
