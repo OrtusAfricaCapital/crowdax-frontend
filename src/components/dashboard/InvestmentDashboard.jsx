@@ -6,9 +6,6 @@ export class InvestmentDashboard extends Component {
   constructor(props){
     super(props)
     this.state = {
-      person: {
-        name: "wanda"
-      },
       investors:{
         totalAmount: 1234,
         totalInvestors: 1234
