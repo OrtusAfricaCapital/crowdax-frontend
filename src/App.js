@@ -111,6 +111,11 @@ class App extends Component {
         location: "Mutundwe",
       },
     ],
+    investments:{
+      companyName: "Wanda",
+      description: "wanda weira",
+      amounts: 10000000,
+    }
   };
   render() {
     return (
