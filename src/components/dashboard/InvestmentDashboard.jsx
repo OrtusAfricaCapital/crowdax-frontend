@@ -3,42 +3,42 @@ import { Button, Row, Col } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 
 export class InvestmentDashboard extends Component {
-<<<<<<< HEAD
   state = {
     company_name: "Wanda Advocates",
     short_description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident tempore facilis adipisci ullam, ipsa laudantium perspiciatis corrupti blanditiis ab! ",
   };
 
-=======
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      investors:{
+      investors: {
         totalAmount: 1234,
-        totalInvestors: 1234
+        totalInvestors: 1234,
       },
-      companyDetails:{
+      companyDetails: {
         name: "CompanyName",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis dolores ducimus nesciunt et voluptatibus quae corrupti beatae voluptates numquam temporibus alias rerum, accusantium aut animi nulla est! Autem, impedit aliquid.",
-        image: "https://seedrs.imgix.net/uploads/startup/section_image/image/26632/pz5736ku29c2s7ewnul2xomi0ces9wz/Seedrs_embedded-images-1-1300x750px.png?rect=0%2C6%2C1300%2C749&w=895&fit=clip&auto=compress&q=90&s=b440131b0676e6cb03463a4a39132f65",
+        description:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis dolores ducimus nesciunt et voluptatibus quae corrupti beatae voluptates numquam temporibus alias rerum, accusantium aut animi nulla est! Autem, impedit aliquid.",
+        image:
+          "https://seedrs.imgix.net/uploads/startup/section_image/image/26632/pz5736ku29c2s7ewnul2xomi0ces9wz/Seedrs_embedded-images-1-1300x750px.png?rect=0%2C6%2C1300%2C749&w=895&fit=clip&auto=compress&q=90&s=b440131b0676e6cb03463a4a39132f65",
         video: "https://www.youtube.com/embed/ySOKrCusEjw",
         Location: "Kampala",
-        Website: "www.investment.com"
+        Website: "www.investment.com",
       },
-      Team:{
+      Team: {
         Name: "Weira Wanda",
         position: "Intern",
-        bio: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, quia autem similique illum dolores deserunt."
+        bio:
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, quia autem similique illum dolores deserunt.",
       },
-      NoticableInvestor:{
-        name:"Name",
-        details: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, aut?"
-      }
-      
+      NoticableInvestor: {
+        name: "Name",
+        details:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, aut?",
+      },
     };
   }
->>>>>>> dee7c3d9cbb22aced71bee93e58ec01fc540f7c2
   render() {
     return (
       <div>
@@ -72,11 +72,10 @@ export class InvestmentDashboard extends Component {
             </Col>
           </Row>
           <Row className="mt-5">
-          <h5>Detailed explanation of the StartUp</h5>
-          <p>{this.state.companyDetails.description}</p>
-          <p>{this.state.companyDetails.description}</p>
-          <p>{this.state.companyDetails.description}</p>
-            
+            <h5>Detailed explanation of the StartUp</h5>
+            <p>{this.state.companyDetails.description}</p>
+            <p>{this.state.companyDetails.description}</p>
+            <p>{this.state.companyDetails.description}</p>
           </Row>
           <div className="mt-4 mb-5">
             <h5>Overview</h5>
@@ -131,10 +130,15 @@ export class InvestmentDashboard extends Component {
                   />
                 </Col>
                 <Col md={8}>
-                  <h5>Name: <span>{this.state.Team.Name}</span></h5>
-                  <p>Position: <span>{this.state.Team.position}</span></p>
-                  <p>Bio: <span>{this.state.Team.bio}</span></p>
-                   
+                  <h5>
+                    Name: <span>{this.state.Team.Name}</span>
+                  </h5>
+                  <p>
+                    Position: <span>{this.state.Team.position}</span>
+                  </p>
+                  <p>
+                    Bio: <span>{this.state.Team.bio}</span>
+                  </p>
                 </Col>
               </Row>
               <Row className="mt-4 mb-5">
@@ -147,9 +151,15 @@ export class InvestmentDashboard extends Component {
                   />
                 </Col>
                 <Col md={8}>
-                <h5>Name: <span>{this.state.Team.Name}</span></h5>
-                  <p>Position: <span>{this.state.Team.position}</span></p>
-                  <p>Bio: <span>{this.state.Team.bio}</span></p>
+                  <h5>
+                    Name: <span>{this.state.Team.Name}</span>
+                  </h5>
+                  <p>
+                    Position: <span>{this.state.Team.position}</span>
+                  </p>
+                  <p>
+                    Bio: <span>{this.state.Team.bio}</span>
+                  </p>
                 </Col>
               </Row>
             </div>
@@ -198,7 +208,6 @@ export class InvestmentDashboard extends Component {
                   <p>{this.state.NoticableInvestor.name}</p>
                   <p>{this.state.NoticableInvestor.details}</p>
                 </Col>
-
               </Row>
             </div>
           </Row>
