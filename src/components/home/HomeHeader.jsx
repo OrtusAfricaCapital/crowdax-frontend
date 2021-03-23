@@ -107,7 +107,10 @@ export class HomeHeader extends Component {
         <p className="p-2" />
         <h3>Trending Pitches</h3>
         <hr />
-        <Container>
+        <Container
+          className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "10vh" }}
+        >
           <Row>
             <TrendingCampaigns campaigns={this.props.campaigns} />
           </Row>

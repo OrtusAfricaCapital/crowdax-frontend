@@ -14,15 +14,15 @@ export class InvestmentDashboard extends Component {
     this.state = {
       investors: {
         totalAmount: 1234,
-        totalInvestors: 1234,
+        totalInvestors: 44,
       },
       companyDetails: {
-        name: "CompanyName",
+        name: "Famunera Inc. ",
         description:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis dolores ducimus nesciunt et voluptatibus quae corrupti beatae voluptates numquam temporibus alias rerum, accusantium aut animi nulla est! Autem, impedit aliquid.",
+          "Famunera is a web and mobile agribusiness marketplace that links smallholder farmers to genuine quality affordable farm agricultural inputs,support service providers and buyers of farm produce in Uganda. It unlocks the traditional trade barriers by bringing the agribusiness market closer to farmers through mobile devices.",
         image:
           "https://seedrs.imgix.net/uploads/startup/section_image/image/26632/pz5736ku29c2s7ewnul2xomi0ces9wz/Seedrs_embedded-images-1-1300x750px.png?rect=0%2C6%2C1300%2C749&w=895&fit=clip&auto=compress&q=90&s=b440131b0676e6cb03463a4a39132f65",
-        video: "https://www.youtube.com/embed/ySOKrCusEjw",
+        video: "https://www.youtube.com/watch?v=hRJlyDdBYS0",
         Location: "Kampala",
         Website: "www.investment.com",
       },
@@ -53,20 +53,20 @@ export class InvestmentDashboard extends Component {
               />
             </Col>
             <Col md={6} sm={12}>
-              <h3>{this.state.companyDetails.name}</h3>
+              <h2>{this.state.companyDetails.name}</h2>
 
               <p>{this.state.companyDetails.description}</p>
               <Row>
                 <Col>
-                  <p>Total Raised</p>
-                  <p>{this.state.investors.totalAmount}</p>
+                  <h3>Total Raised</h3>
+                  <h4> $ {this.state.investors.totalAmount}</h4>
                 </Col>
                 <Col>
-                  <p>Total Investors</p>
-                  <p>{this.state.investors.totalInvestors}</p>
+                  <h3>Total Investors</h3>
+                  <h4>{this.state.investors.totalInvestors}</h4>
                 </Col>
               </Row>
-              <Button variant="primary" size="lg" block>
+              <Button variant="warning" size="lg" block>
                 Invest Now
               </Button>
             </Col>

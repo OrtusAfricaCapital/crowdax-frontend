@@ -13,7 +13,7 @@ import InvestmentDashboard from "./components/dashboard/InvestmentDashboard";
 class App extends Component {
   state = {
     headlines: [
-      { id: 1, heading: "Total Investments", content: "UGX 700,000" },
+      { id: 1, heading: "Total Investments", content: "$45,000" },
       { id: 2, heading: "Live Investments", content: 27 },
       { id: 3, heading: "Secondary Investments", content: 13 },
       { id: 4, heading: "Total Investors", content: 350 },
@@ -26,8 +26,8 @@ class App extends Component {
         category: "Innovation",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-        amount_raised: 900000,
-        amount_targeted: 6000000,
+        amount_raised: 900,
+        amount_targeted: 6000,
         start_date: "01/01/2021",
         end_date: "2/2/2021",
         investors: 11,
@@ -41,8 +41,8 @@ class App extends Component {
         category: "Technology",
         description:
           "The Flip platform offers businesses the agility to hire talent for a specific work task without risk,",
-        amount_raised: 4300000,
-        amount_targeted: 9000000,
+        amount_raised: 4300,
+        amount_targeted: 70000,
         start_date: "12/12/2020",
         end_date: "12/3/2021",
         investors: 6,
@@ -57,8 +57,8 @@ class App extends Component {
         category: "Music",
         description:
           "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-        amount_raised: 5000000,
-        amount_targeted: 10000000,
+        amount_raised: 5000,
+        amount_targeted: 10000,
         start_date: "13/1/2021",
         end_date: "2/23/2021",
         investors: 72,
@@ -72,8 +72,8 @@ class App extends Component {
         category: "Agriculture",
         description:
           "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-        amount_raised: 2400000,
-        amount_targeted: 35000000,
+        amount_raised: 24000,
+        amount_targeted: 35000,
         start_date: "13/1/2021",
         end_date: "3/1/2021",
         investors: 10,
@@ -87,8 +87,8 @@ class App extends Component {
         category: "Business",
         description:
           "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-        amount_raised: 2400000,
-        amount_targeted: 300000,
+        amount_raised: 240,
+        amount_targeted: 3000,
         start_date: "25/1/2021",
         end_date: "3/1/2021",
         investors: 122,
@@ -102,8 +102,8 @@ class App extends Component {
         category: "Innovation",
         description:
           "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-        amount_raised: 31000000,
-        amount_targeted: 35000000,
+        amount_raised: 3100,
+        amount_targeted: 34000,
         start_date: "13/1/2021",
         end_date: "3/1/2021",
         investors: 12,
@@ -111,7 +111,6 @@ class App extends Component {
         location: "Mutundwe",
       },
     ],
-    
   };
   render() {
     return (

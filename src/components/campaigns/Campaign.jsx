@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, ProgressBar } from "react-bootstrap";
+import { Col, Row, ProgressBar, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 class Campaign extends Component {
@@ -23,53 +23,59 @@ class Campaign extends Component {
 
     return (
       <Col sm={4} style={campaignStyle}>
-        <div>
-          <Link to="/investment">
-            <img
-              src={campaign.image}
-              className="img-thumbnail"
-              alt="thumbnail"
-            />
-            <span className="blockquote-footer">{campaign.category}</span>
-          </Link>
-          <h5>{campaign.title}</h5>
-          <p>{campaign.description}</p>
-          {/**Calculation for the percentange collected so far */}
-          <ProgressBar now={raisedPercentange} striped variant="warning" />
-          <Row>
-            <Col className="text-left">
-              <strong>{raisedPercentange}% </strong>
-              fund-raised
-            </Col>
-            <Col className="text-right">
-              <strong>{daysLeft} days</strong> Left
-            </Col>
-          </Row>
-          <hr className="mt-3 mb-6" />
-          <Row>
-            <Col className="text-left">
-              Target
-              <br />
-              <strong>UGX {amount_targeted}</strong>
-            </Col>
-            <Col className="text-center">
-              Location
-              <br />
-              <strong>{campaign.location}</strong>
-            </Col>
-            <Col className="text-right">
-              Investors
-              <br />
-              <strong>{campaign.investors}</strong>
-            </Col>
-          </Row>
-        </div>
+        <Card>
+          <Card.Body>
+            <div className="w-100" style={{ maxWidth: "800px" }}>
+              <Link to="/investment">
+                <img
+                  src={campaign.image}
+                  className="img-thumbnail"
+                  alt="thumbnail"
+                />
+                <span className="blockquote-footer">{campaign.category}</span>
+              </Link>
+              <h5>{campaign.title}</h5>
+              <p>{campaign.description}</p>
+              {/**Calculation for the percentange collected so far */}
+              <ProgressBar now={raisedPercentange} striped variant="warning" />
+              <Row>
+                <Col className="text-left">
+                  <strong>{raisedPercentange}% </strong>
+                  fund-raised
+                </Col>
+                <Col className="text-right">
+                  <strong>{daysLeft} days</strong> Left
+                </Col>
+              </Row>
+              <hr className="mt-3 mb-6" />
+              <Card.Header>
+                <Row>
+                  <Col className="text-left">
+                    Target
+                    <br />
+                    <strong>$ {amount_targeted}</strong>
+                  </Col>
+                  <Col className="text-center">
+                    Location
+                    <br />
+                    <strong>{campaign.location}</strong>
+                  </Col>
+                  <Col className="text-right">
+                    Investors
+                    <br />
+                    <strong>{campaign.investors}</strong>
+                  </Col>
+                </Row>
+              </Card.Header>
+            </div>
+          </Card.Body>
+        </Card>{" "}
       </Col>
     );
   }
 }
 
 const campaignStyle = {
-  paddingBottom: "20px",
+  padding: "5px",
 };
 export default Campaign;
