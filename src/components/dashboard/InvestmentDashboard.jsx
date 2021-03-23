@@ -3,13 +3,13 @@ import { Button, Row, Col } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 
 export class InvestmentDashboard extends Component {
-  render() {
-    state = {
-      company_name: "Wanda Advocates",
-      short_description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident tempore facilis adipisci ullam, ipsa laudantium perspiciatis corrupti blanditiis ab! ",
-    };
+  state = {
+    company_name: "Wanda Advocates",
+    short_description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident tempore facilis adipisci ullam, ipsa laudantium perspiciatis corrupti blanditiis ab! ",
+  };
 
+  render() {
     return (
       <div>
         <Container className="mt-4 mb-5">
