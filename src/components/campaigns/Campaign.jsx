@@ -22,7 +22,7 @@ class Campaign extends Component {
     var daysLeft = Math.ceil(difference / (1000 * 3600 * 24));
 
     return (
-      <Col sm={4} style={campaignStyle}>
+      <Col>
         <Card>
           <Card.Body>
             <div className="w-100" style={{ maxWidth: "800px" }}>

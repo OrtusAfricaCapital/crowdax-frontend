@@ -68,9 +68,18 @@ export class HomeHeader extends Component {
           </Col>
         </Row>
         <p className="p-5" />
-        <Row>
-          <Headlines headlines={this.props.headlines} />
-        </Row>
+        <Container
+          fluid
+          className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "2vh" }}
+        >
+          <div className="w-100">
+            <Row>
+              <Headlines headlines={this.props.headlines} />
+            </Row>
+          </div>
+        </Container>
+
         <p className="p-2" />
         <Row>
           <Col sm={9}>
@@ -107,14 +116,9 @@ export class HomeHeader extends Component {
         <p className="p-2" />
         <h3>Trending Pitches</h3>
         <hr />
-        <Container
-          className="d-flex align-items-center justify-content-center"
-          style={{ minHeight: "10vh" }}
-        >
-          <Row>
-            <TrendingCampaigns campaigns={this.props.campaigns} />
-          </Row>
-        </Container>
+        <Row>
+          <TrendingCampaigns campaigns={this.props.campaigns} />
+        </Row>
 
         {/* The Latest Campaigns  */}
         <p className="p-2" />
@@ -135,5 +139,7 @@ export class HomeHeader extends Component {
     );
   }
 }
-
+const homeHeaderDesign = {
+  background: "#fff5da",
+};
 export default HomeHeader;

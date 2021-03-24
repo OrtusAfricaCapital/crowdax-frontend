@@ -1,23 +1,29 @@
 import React, { Component } from "react";
-import { Col } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 
 class Headline extends Component {
   render() {
     return (
-      <div>
-        <Col sm xs md style={headlineStyle}>
-          <h4>{this.props.headline.heading}</h4>
-          <h2>{this.props.headline.content}</h2>
-        </Col>
-      </div>
+      <Col sm={3} md={3}>
+        <Card>
+          <Card.Header>
+            <h2>{this.props.headline.content}</h2>
+            <hr />
+            <h6>{this.props.headline.heading}</h6>
+          </Card.Header>
+        </Card>
+      </Col>
     );
   }
 }
 
 const headlineStyle = {
   alignText: "center",
-  border: "2px #ccc dotted",
-  marginRight: "45px",
+  //border: "2px #ccc dotted",
+  paddingRight: "40px",
+  paddingLeft: "40px",
+  //marginLeft: "30px",
+  //marginRight: "30px",
   align: "center",
 };
 

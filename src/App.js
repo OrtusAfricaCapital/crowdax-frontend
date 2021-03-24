@@ -13,10 +13,10 @@ import InvestmentDashboard from "./components/dashboard/InvestmentDashboard";
 class App extends Component {
   state = {
     headlines: [
-      { id: 1, heading: "Total Investments", content: "$45,000" },
-      { id: 2, heading: "Live Investments", content: 27 },
-      { id: 3, heading: "Secondary Investments", content: 13 },
-      { id: 4, heading: "Total Investors", content: 350 },
+      { id: 1, heading: "Money Invested", content: "$159,000" },
+      { id: 2, heading: "Available pitches", content: 127 },
+      { id: 3, heading: "Done Deals", content: 230 },
+      { id: 4, heading: "Available investors", content: 450 },
     ],
     campaigns: [
       {
