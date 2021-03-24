@@ -4,7 +4,7 @@ import { Card, Col } from "react-bootstrap";
 class Headline extends Component {
   render() {
     return (
-      <Col sm={3} md={3}>
+      <Col sm={12} md={3} style={headlineStyle}>
         <Card>
           <Card.Header>
             <h2>{this.props.headline.content}</h2>
@@ -18,13 +18,13 @@ class Headline extends Component {
 }
 
 const headlineStyle = {
-  alignText: "center",
+  //alignText: "center",
   //border: "2px #ccc dotted",
-  paddingRight: "40px",
-  paddingLeft: "40px",
+  //paddingRight: "40px",
+  //#paddingLeft: "40px",
   //marginLeft: "30px",
-  //marginRight: "30px",
-  align: "center",
+  marginBottom: "10px",
+  //align: "center",
 };
 
 export default Headline;

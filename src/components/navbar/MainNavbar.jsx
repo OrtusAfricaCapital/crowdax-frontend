@@ -21,9 +21,9 @@ class MainNavbar extends Component {
             </Navbar.Brand>
           </Link>
           <Nav className="ml-auto">
-            <Nav.Link href="#invest">Invest</Nav.Link>
+            <Nav.Link href="investments">Invest</Nav.Link>
             <Nav.Link>|</Nav.Link>
-            <Nav.Link href="#Raise">Raise</Nav.Link>
+            <Nav.Link href="raise">Raise</Nav.Link>
           </Nav>
           <Nav className="ml-auto">
             <Link to="/signin">

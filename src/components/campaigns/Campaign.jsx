@@ -22,52 +22,50 @@ class Campaign extends Component {
     var daysLeft = Math.ceil(difference / (1000 * 3600 * 24));
 
     return (
-      <Col>
+      <Col sm={12} md={4} style={campaignStyle}>
         <Card>
           <Card.Body>
-            <div className="w-100" style={{ maxWidth: "800px" }}>
-              <Link to="/investment">
-                <img
-                  src={campaign.image}
-                  className="img-thumbnail"
-                  alt="thumbnail"
-                />
-                <span className="blockquote-footer">{campaign.category}</span>
-              </Link>
-              <h5>{campaign.title}</h5>
-              <p>{campaign.description}</p>
-              {/**Calculation for the percentange collected so far */}
-              <ProgressBar now={raisedPercentange} striped variant="warning" />
+            <Link to="/investment">
+              <img
+                src={campaign.image}
+                className="img-thumbnail"
+                alt="thumbnail"
+              />
+              <span className="blockquote-footer">{campaign.category}</span>
+            </Link>
+            <h5>{campaign.title}</h5>
+            <p>{campaign.description}</p>
+            {/**Calculation for the percentange collected so far */}
+            <ProgressBar now={raisedPercentange} striped variant="warning" />
+            <Row>
+              <Col className="text-left">
+                <strong>{raisedPercentange}% </strong>
+                fund-raised
+              </Col>
+              <Col className="text-right">
+                <strong>{daysLeft} days</strong> Left
+              </Col>
+            </Row>
+            <hr className="mt-3 mb-6" />
+            <Card.Header>
               <Row>
                 <Col className="text-left">
-                  <strong>{raisedPercentange}% </strong>
-                  fund-raised
+                  Target
+                  <br />
+                  <strong>$ {amount_targeted}</strong>
+                </Col>
+                <Col className="text-center">
+                  Location
+                  <br />
+                  <strong>{campaign.location}</strong>
                 </Col>
                 <Col className="text-right">
-                  <strong>{daysLeft} days</strong> Left
+                  Investors
+                  <br />
+                  <strong>{campaign.investors}</strong>
                 </Col>
               </Row>
-              <hr className="mt-3 mb-6" />
-              <Card.Header>
-                <Row>
-                  <Col className="text-left">
-                    Target
-                    <br />
-                    <strong>$ {amount_targeted}</strong>
-                  </Col>
-                  <Col className="text-center">
-                    Location
-                    <br />
-                    <strong>{campaign.location}</strong>
-                  </Col>
-                  <Col className="text-right">
-                    Investors
-                    <br />
-                    <strong>{campaign.investors}</strong>
-                  </Col>
-                </Row>
-              </Card.Header>
-            </div>
+            </Card.Header>
           </Card.Body>
         </Card>{" "}
       </Col>
@@ -76,6 +74,6 @@ class Campaign extends Component {
 }
 
 const campaignStyle = {
-  padding: "5px",
+  marginBottom: "10px",
 };
 export default Campaign;

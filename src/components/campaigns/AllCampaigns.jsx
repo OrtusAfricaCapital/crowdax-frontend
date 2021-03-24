@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Form, FormControl, Row } from "react-bootstrap";
+import { Col, Container, Form, FormControl, Row } from "react-bootstrap";
 import Campaign from "./Campaign";
 
 export class AllCampaigns extends Component {
@@ -102,6 +102,14 @@ export class AllCampaigns extends Component {
   render() {
     return (
       <Container>
+        <Row>
+          <Col>
+            <p className="p-1" />
+            <h1>INVEST NOW</h1>
+            <p>Browse through the current investment opportunities</p>
+            <p className="p-1" />
+          </Col>
+        </Row>
         <Row>
           {this.state.campaigns.map((campaign) => (
             <Campaign key={campaign.id} campaign={campaign} />

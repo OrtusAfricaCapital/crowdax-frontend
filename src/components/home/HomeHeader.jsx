@@ -39,7 +39,7 @@ export class HomeHeader extends Component {
                 </InputGroup.Prepend>
                 <FormControl
                   id="inlineFormInputGroup"
-                  placeholder="Invest in a business"
+                  placeholder="What's the Business? "
                 />
                 <InputGroup.Prepend>
                   <InputGroup.Text>Search</InputGroup.Text>
@@ -50,9 +50,9 @@ export class HomeHeader extends Component {
         </Row>
         <p />
         <Row>
-          <Col md={{ span: 5, offset: 5 }}>
+          <Col xs={12} sm={12} md={12} lg={12} style={{ textAlign: "center" }}>
             <Button variant="info" size="lg">
-              Search{" "}
+              <h4>Search Investments</h4>
             </Button>{" "}
           </Col>
         </Row>
@@ -81,8 +81,9 @@ export class HomeHeader extends Component {
         </Container>
 
         <p className="p-2" />
-        <Row>
-          <Col sm={9}>
+        <hr />
+        <Row sm={2} md={2}>
+          <Col>
             <DropdownButton
               id="bg-vertical-dropdown-1"
               as={ButtonGroup}
@@ -98,10 +99,10 @@ export class HomeHeader extends Component {
               <Dropdown.Item eventKey="2">Rated</Dropdown.Item>
             </DropdownButton>
           </Col>
-          <Col sm={3}>
+          <Col style={allPitchesDesign}>
             <Link
               to={{
-                pathname: "/allinvestments",
+                pathname: "/investments",
                 campaigns: this.props.campaigns,
               }}
             >
@@ -141,5 +142,9 @@ export class HomeHeader extends Component {
 }
 const homeHeaderDesign = {
   background: "#fff5da",
+};
+
+const allPitchesDesign = {
+  textAlign: "right",
 };
 export default HomeHeader;

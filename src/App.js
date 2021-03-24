@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+
 import MainNavbar from "./components/navbar/MainNavbar";
 import HomeHeader from "./components/home/HomeHeader";
 import Footer from "./components/footer/Footer";
@@ -9,14 +9,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AllCampaigns from "./components/campaigns/AllCampaigns";
 import Register from "./components/signup/Register";
 import InvestmentDashboard from "./components/dashboard/InvestmentDashboard";
+import RaiseHome from "./components/raise/RaiseHome";
 
 class App extends Component {
   state = {
     headlines: [
-      { id: 1, heading: "Money Invested", content: "$159,000" },
-      { id: 2, heading: "Available pitches", content: 127 },
+      { id: 1, heading: "Invested So Far", content: "$159,000" },
+      { id: 2, heading: "Available Businesses", content: 127 },
       { id: 3, heading: "Done Deals", content: 230 },
-      { id: 4, heading: "Available investors", content: 450 },
+      { id: 4, heading: "Available Investors", content: 450 },
     ],
     campaigns: [
       {
@@ -117,7 +118,7 @@ class App extends Component {
       // helps to link pages
       <Router>
         {" "}
-        <div>
+        <div style={AppComponentCSS}>
           {/* Mainnavbar is reposible for showing the navbar of the app */}
           <MainNavbar />
 
@@ -128,9 +129,10 @@ class App extends Component {
                 campaigns={this.state.campaigns}
               />
             </Route>
+            <Route path="/raise" component={RaiseHome} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={Register} />
-            <Route path="/allinvestments" component={AllCampaigns} />
+            <Route path="/investments" component={AllCampaigns} />
             <Route path="/investment" component={InvestmentDashboard} />
           </Switch>
           <Footer />
@@ -139,5 +141,7 @@ class App extends Component {
     );
   }
 }
-
+const AppComponentCSS = {
+  backgroundColor: "#eeeeee",
+};
 export default App;
