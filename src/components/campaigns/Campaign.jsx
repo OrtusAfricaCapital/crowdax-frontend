@@ -34,7 +34,7 @@ class Campaign extends Component {
               <span className="blockquote-footer">{campaign.category}</span>
             </Link>
             <h5>{campaign.title}</h5>
-            <p>{campaign.description}</p>
+            <p className="text-justify">{campaign.description}</p>
             {/**Calculation for the percentange collected so far */}
             <ProgressBar now={raisedPercentange} striped variant="warning" />
             <Row>

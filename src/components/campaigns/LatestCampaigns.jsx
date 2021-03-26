@@ -8,7 +8,7 @@ class LatestCampaigns extends Component {
     );
 
     return latestCampaign
-      .slice(0, 3)
+      .slice(Math.max(latestCampaign.length - 3, 1))
       .map((campaign) => <Campaign key={campaign.id} campaign={campaign} />);
   }
 }
