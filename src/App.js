@@ -4,7 +4,6 @@ import MainNavbar from "./components/navbar/MainNavbar";
 import HomeHeader from "./components/home/HomeHeader";
 import Footer from "./components/footer/Footer";
 import SignIn from "./components/signin/Signin";
-import SignUp from "./components/signup/Signup";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AllCampaigns from "./components/campaigns/AllCampaigns";
 import Register from "./components/signup/Register";

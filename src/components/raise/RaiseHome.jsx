@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 
 export class RaiseHome extends Component {
   render() {
