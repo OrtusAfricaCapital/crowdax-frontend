@@ -6,9 +6,9 @@ import Footer from "./components/footer/Footer";
 import SignIn from "./components/signin/Signin";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AllCampaigns from "./components/campaigns/AllCampaigns";
-import Register from "./components/signup/Register";
 import InvestmentDashboard from "./components/dashboard/InvestmentDashboard";
 import RaiseHome from "./components/raise/RaiseHome";
+import SignUp from "./components/signup/Signup";
 
 class App extends Component {
   state = {
@@ -162,7 +162,7 @@ class App extends Component {
             </Route>
             <Route path="/raise" component={RaiseHome} />
             <Route path="/signin" component={SignIn} />
-            <Route path="/signup" component={Register} />
+            <Route path="/signup" component={SignUp} />
             <Route path="/investments" component={AllCampaigns} />
             <Route path="/investment" component={InvestmentDashboard} />
           </Switch>

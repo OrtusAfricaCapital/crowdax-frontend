@@ -140,9 +140,6 @@ export class HomeHeader extends Component {
     );
   }
 }
-const homeHeaderDesign = {
-  background: "#fff5da",
-};
 
 const allPitchesDesign = {
   textAlign: "right",

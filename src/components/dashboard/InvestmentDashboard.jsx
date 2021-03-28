@@ -108,6 +108,7 @@ export class InvestmentDashboard extends Component {
             <div>
               <h5>Video explanation of the StartUp</h5>
               <iframe
+                title="Explanation Video"
                 width="700"
                 height="300"
                 src={this.state.companyDetails.video}
