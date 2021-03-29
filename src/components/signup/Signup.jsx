@@ -1,8 +1,9 @@
-import axios from "axios";
 import React, { Component } from "react";
 
 import { Button, Col, Form, Row, Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 /* import googleIcon from "../../assests/google_icon.svg";
 import facebookIcon from "../../assests/facebook_icon.svg";
 import twitterIcon from "../../assests/twitter_icon.svg";
@@ -28,7 +29,7 @@ class SignUp extends Component {
     const { email, password, password_confirmation } = this.state;
 
     axios
-      .Post(
+      .post(
         "http://localhost:8000/registrations",
         {
           user: {
