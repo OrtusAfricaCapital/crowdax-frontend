@@ -3,14 +3,7 @@ import { Button, Row, Col } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 
 export class InvestmentDashboard extends Component {
-<<<<<<< HEAD
-  state = {
-    company_name: "Wanda Advocates",
-    short_description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident tempore facilis adipisci ullam, ipsa laudantium perspiciatis corrupti blanditiis ab! ",
-  };
 
-=======
   constructor(props){
     super(props)
     this.state = {
@@ -38,7 +31,6 @@ export class InvestmentDashboard extends Component {
       
     };
   }
->>>>>>> dee7c3d9cbb22aced71bee93e58ec01fc540f7c2
   render() {
     return (
       <div>
