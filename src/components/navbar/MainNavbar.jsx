@@ -1,8 +1,24 @@
+import axios from "axios";
 import React, { Component } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 class MainNavbar extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+  }
+
+  handleLogoutClick() {
+    axios
+      .delete("http://localhost:8000/api/v1/logout", { withCredentials: true })
+      .then((response) => {
+        this.props.handleLogout();
+      })
+      .catch((error) => {
+        console.log(("logout error: ", error));
+      });
+  }
   render() {
     return (
       <div>
@@ -21,23 +37,41 @@ class MainNavbar extends Component {
             </Navbar.Brand>
           </Link>
           <Nav className="ml-auto">
-            <Nav.Link href="investments">Invest</Nav.Link>
+            <Nav.Link href="companies">Invest</Nav.Link>
             <Nav.Link>|</Nav.Link>
             <Nav.Link href="raise">Raise</Nav.Link>
           </Nav>
           <Nav className="ml-auto">
-            <Link to="/signin">
-              <Button variant="info">Login</Button>
-            </Link>
-            <Link to="/signup">
-              <Button variant="info" style={{ marginLeft: 10 }}>
-                Signup
-              </Button>
-            </Link>
+            <span>{this.formatLogInOut()}</span>
           </Nav>
         </Navbar>
       </div>
     );
+  }
+
+  formatLogInOut() {
+    if (this.props.loggedInStatus === "LOGGED_IN") {
+      return (
+        <span>
+          <span>{this.props.user.email}</span>
+          <Button variant="success" onClick={() => this.handleLogoutClick()}>
+            Logout
+          </Button>
+        </span>
+      );
+    } else if (this.props.loggedInStatus === "NOT_LOGGED_IN")
+      return (
+        <span>
+          <Link to="/Login">
+            <Button variant="info">Login</Button>
+          </Link>
+          <Link to="/signup">
+            <Button variant="info" style={{ marginLeft: 10 }}>
+              Signup
+            </Button>
+          </Link>
+        </span>
+      );
   }
 }
 

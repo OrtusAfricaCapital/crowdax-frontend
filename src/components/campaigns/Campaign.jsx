@@ -25,7 +25,7 @@ class Campaign extends Component {
       <Col sm={12} md={4} style={campaignStyle}>
         <Card>
           <Card.Body>
-            <Link to="/investment">
+            <Link to="/company">
               <img
                 src={campaign.image}
                 className="img-thumbnail"

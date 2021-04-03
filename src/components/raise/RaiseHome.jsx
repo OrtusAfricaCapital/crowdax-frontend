@@ -4,7 +4,7 @@ import { Container, Form } from "react-bootstrap";
 export class RaiseHome extends Component {
   render() {
     return (
-      <Container fluid>
+      <Container>
         <h1>Apply to raise on Crowdax</h1>
         <hr />
         <p>

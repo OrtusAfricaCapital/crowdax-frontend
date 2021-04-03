@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Button, Col, Form, Row, Container, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 
 /* import googleIcon from "../../assests/google_icon.svg";
@@ -13,7 +13,7 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      emai: "",
+      email: "",
       password: "",
       password_confirmation: "",
       registrationErrors: "",
@@ -24,13 +24,11 @@ class SignUp extends Component {
   }
 
   handleSubmit(event) {
-    //structure email, password, password_confirmation easy to read
-
     const { email, password, password_confirmation } = this.state;
 
     axios
       .post(
-        "http://localhost:8000/registrations",
+        "http://localhost:8000/api/v1/registrations",
         {
           user: {
             email: email,
@@ -43,7 +41,12 @@ class SignUp extends Component {
         }
       )
       .then((response) => {
-        console.log("registration response", response);
+        console.log("data", response.data);
+
+        if (response.data.status === "created") {
+          this.props.handleLogin(response.data);
+          this.props.handleSuccessfulAuth(response.data);
+        }
       })
       .catch((error) => {
         console.log("registration error", error);
@@ -67,10 +70,11 @@ class SignUp extends Component {
             <Card.Body>
               <Row>
                 <Col sm={8}>
+                  <p>Login status: {this.props.loggedInStatus}</p>
                   <h3 align="center ">Sign Up to Crowdax</h3>
                   <hr />
                   <Form onSubmit={this.handleSubmit}>
-                    <Form.Group controlId="formBasicEmail">
+                    <Form.Group>
                       <Form.Control
                         type="email"
                         name="email"
@@ -81,7 +85,7 @@ class SignUp extends Component {
                       />
                     </Form.Group>
 
-                    <Form.Group controlId="FormPassword">
+                    <Form.Group>
                       <Form.Control
                         type="password"
                         name="password"
@@ -92,7 +96,7 @@ class SignUp extends Component {
                       />
                     </Form.Group>
 
-                    <Form.Group controlId="formPasswordConfirmation">
+                    <Form.Group>
                       <Form.Control
                         type="password"
                         name="password_confirmation"
@@ -102,13 +106,7 @@ class SignUp extends Component {
                         required
                       />
                     </Form.Group>
-                    {/*    <Form.Group controlId="formBasicCheckbox">
-                      <Form.Check
-                        type="checkbox"
-                        label="I have agreed to Terms & Conditions"
-                      />
-                    </Form.Group>
- */}
+
                     <Button variant="info" size="lg" type="submit">
                       Register
                     </Button>

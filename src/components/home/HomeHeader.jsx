@@ -15,7 +15,7 @@ import search_icon from "../../assests/search_icon.png";
 import UpcomingCampaigns from "../campaigns/UpcomingCampaigns";
 import TrendingCampaigns from "../campaigns/TrendingCampaigns";
 import LatestCampaigns from "../campaigns/LatestCampaigns";
-import Headlines from "../home/Headlines";
+import Headlines from "./Headlines";
 import { Link } from "react-router-dom";
 
 export class HomeHeader extends Component {
@@ -102,12 +102,12 @@ export class HomeHeader extends Component {
           <Col style={allPitchesDesign}>
             <Link
               to={{
-                pathname: "/investments",
+                pathname: "/companies",
                 campaigns: this.props.campaigns,
               }}
             >
               <Button Badge variant="info" size="lg">
-                All Pitches
+                Showcase all
               </Button>
             </Link>
           </Col>
@@ -115,7 +115,7 @@ export class HomeHeader extends Component {
 
         {/* The trending Campaigns  */}
         <p className="p-2" />
-        <h3>Trending Pitches</h3>
+        <h3>Trending Business</h3>
         <hr />
         <Row>
           <TrendingCampaigns campaigns={this.props.campaigns} />
@@ -123,7 +123,7 @@ export class HomeHeader extends Component {
 
         {/* The Latest Campaigns  */}
         <p className="p-2" />
-        <h3>Latest Pitches</h3>
+        <h3>Latest Business</h3>
         <hr />
         <Row>
           <LatestCampaigns campaigns={this.props.campaigns} />
@@ -131,7 +131,7 @@ export class HomeHeader extends Component {
 
         {/* The upcoming Campaigns  */}
         <p className="p-2" />
-        <h3>Upcoming Pitches</h3>
+        <h3>Business by Traction</h3>
         <hr />
         <Row>
           <UpcomingCampaigns campaigns={this.props.campaigns} />
