@@ -39,7 +39,7 @@ export class Login extends Component {
       .then((response) => {
         if (response.data.logged_in) {
           this.props.handleLogin(response.data);
-          this.props.handleSuccessfulAuth(response.data);
+          this.props.history.push("/");
         }
       })
       .catch((error) => {

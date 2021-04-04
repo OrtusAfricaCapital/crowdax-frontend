@@ -23,6 +23,12 @@ class SignUp extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.loggedInStatus.length > 2) {
+      this.props.history.push("/");
+    }
+  }
+
   handleSubmit(event) {
     const { email, password, password_confirmation } = this.state;
 
@@ -45,7 +51,7 @@ class SignUp extends Component {
 
         if (response.data.status === "created") {
           this.props.handleLogin(response.data);
-          this.props.handleSuccessfulAuth(response.data);
+          this.props.history.push("/");
         }
       })
       .catch((error) => {

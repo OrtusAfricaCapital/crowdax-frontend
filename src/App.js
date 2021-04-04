@@ -8,12 +8,7 @@ import SignUp from "./components/auth/signup/Signup";
 import AllCampaigns from "./components/campaigns/AllCampaigns";
 import InvestmentDashboard from "./components/dashboard/InvestmentDashboard";
 import RaiseHome from "./components/raise/RaiseHome";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/auth/signin/Login";
 import axios from "axios";
 import NotFoundPage from "./components/404/NotFoundPage";
@@ -157,7 +152,7 @@ class App extends Component {
       ],
     };
     //binds the functions
-    this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
+    //this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
@@ -193,10 +188,6 @@ class App extends Component {
       .catch((error) => {
         console.log("check login error", error);
       });
-  }
-
-  handleSuccessfulAuth(data) {
-    <Redirect to="/raise" />;
   }
 
   handleLogout() {
@@ -248,7 +239,6 @@ class App extends Component {
                 <Login
                   {...props}
                   handleLogin={this.handleLogin}
-                  handleSuccessfulAuth={this.handleSuccessfulAuth}
                   loggedInStatus={this.state.loggedInStatus}
                 />
               )}
@@ -259,12 +249,11 @@ class App extends Component {
               render={(props) => (
                 <SignUp
                   {...props}
-                  handleSuccessfulAuth={this.handleSuccessfulAuth}
                   handleLogin={this.handleLogin}
                   loggedInStatus={this.state.loggedInStatus}
                 />
               )}
-            ></Route>
+            />
 
             <Route
               path="/companies"
