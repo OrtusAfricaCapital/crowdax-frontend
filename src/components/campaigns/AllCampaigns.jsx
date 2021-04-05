@@ -10,7 +10,7 @@ export class AllCampaigns extends Component {
   state = {
     headlines: [
       { id: 1, heading: "Invested So Far", content: "$159,000" },
-      { id: 2, heading: "Available Businesses", content: 127 },
+      { id: 2, heading: "Available companies", content: 7 },
       { id: 3, heading: "Done Deals", content: 230 },
       { id: 4, heading: "Available Investors", content: 450 },
     ],
@@ -21,7 +21,6 @@ export class AllCampaigns extends Component {
         <Row>
           <Col>
             <p className="p-1" />
-            <h2>Login Status: {this.props.loggedInStatus}</h2>
             <h1>INVEST NOW</h1>
             <p>Browse through the current investment opportunities</p>
             <p className="p-1" />

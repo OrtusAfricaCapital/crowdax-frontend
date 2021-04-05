@@ -20,6 +20,11 @@ export class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+  //Prevents a signed user to access signup page
+  componentDidUpdate() {
+    if (this.props.loggedInStatus == "LOGGED_IN") this.props.history.push("/");
+  }
+
   handleSubmit(event) {
     const { email, password, password_confirmation } = this.state;
 

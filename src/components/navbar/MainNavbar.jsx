@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 class MainNavbar extends Component {
   constructor(props) {
     super(props);
@@ -53,8 +54,12 @@ class MainNavbar extends Component {
     if (this.props.loggedInStatus === "LOGGED_IN") {
       return (
         <span>
-          <span>{this.props.user.email}</span>
-          <Button variant="success" onClick={() => this.handleLogoutClick()}>
+          <span className="navbarUsername">{this.props.user.email}</span>
+          <Button
+            variant="warning"
+            size="lg"
+            onClick={() => this.handleLogoutClick()}
+          >
             Logout
           </Button>
         </span>

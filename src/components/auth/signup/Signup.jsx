@@ -23,10 +23,9 @@ class SignUp extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.loggedInStatus.length > 2) {
-      this.props.history.push("/");
-    }
+  //Prevents a signed user to access signup page
+  componentDidUpdate() {
+    if (this.props.loggedInStatus == "LOGGED_IN") this.props.history.push("/");
   }
 
   handleSubmit(event) {
@@ -56,6 +55,9 @@ class SignUp extends Component {
       })
       .catch((error) => {
         console.log("registration error", error);
+        if (error == "Network Error") {
+          console.log("silly", error === "Network Error");
+        }
       });
 
     event.preventDefault();

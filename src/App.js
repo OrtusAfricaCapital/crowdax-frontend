@@ -175,6 +175,7 @@ class App extends Component {
             loggedInStatus: "LOGGED_IN",
             user: response.data.user,
           });
+          console.log("Test", window.location.pathname);
         } else if (
           !response.data.logged_in &&
           this.state.loggedInStatus === "LOGGED_IN"
@@ -240,6 +241,7 @@ class App extends Component {
                   {...props}
                   handleLogin={this.handleLogin}
                   loggedInStatus={this.state.loggedInStatus}
+                  user={this.state.user}
                 />
               )}
             />
