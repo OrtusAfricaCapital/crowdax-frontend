@@ -13,6 +13,8 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      first_name: "",
+      last_name: "",
       email: "",
       password: "",
       password_confirmation: "",
@@ -78,10 +80,32 @@ class SignUp extends Component {
             <Card.Body>
               <Row>
                 <Col sm={8}>
-                  <p>Login status: {this.props.loggedInStatus}</p>
                   <h3 align="center ">Sign Up to Crowdax</h3>
                   <hr />
                   <Form onSubmit={this.handleSubmit}>
+                    {/* <Form.Group>
+                      <Form.Row>
+                        <Col>
+                          <Form.Control
+                            name="first_name"
+                            placeholder="First name"
+                            value={this.state.first_name}
+                            onChange={this.handleChange}
+                            required
+                          />
+                        </Col>
+                        <Col>
+                          <Form.Control
+                            name="last_name"
+                            placeholder="Last name"
+                            value={this.state.last_name}
+                            onChange={this.handleChange}
+                            required
+                          />
+                        </Col>
+                      </Form.Row>
+                    </Form.Group>
+ */}{" "}
                     <Form.Group>
                       <Form.Control
                         type="email"
@@ -92,7 +116,6 @@ class SignUp extends Component {
                         required
                       />
                     </Form.Group>
-
                     <Form.Group>
                       <Form.Control
                         type="password"
@@ -103,7 +126,6 @@ class SignUp extends Component {
                         required
                       />
                     </Form.Group>
-
                     <Form.Group>
                       <Form.Control
                         type="password"
@@ -114,7 +136,6 @@ class SignUp extends Component {
                         required
                       />
                     </Form.Group>
-
                     <Button variant="info" size="lg" type="submit">
                       Register
                     </Button>
