@@ -164,9 +164,11 @@ class App extends Component {
   //checks if the user is logged in
   checkLoginStatus() {
     axios
-      .get("http://localhost:8000/api/v1/logged_in", { withCredentials: true })
+      .get("https://crowdaxconnect.herokuapp.com/api/v1/logged_in", {
+        withCredentials: true,
+      })
       .then((response) => {
-        console.log("logged in?", response.data.user);
+        // console.log("logged in?", response.data.user);
         if (
           response.data.logged_in &&
           this.state.loggedInStatus === "NOT_LOGGED_IN"
@@ -175,7 +177,7 @@ class App extends Component {
             loggedInStatus: "LOGGED_IN",
             user: response.data.user,
           });
-          console.log("Test", window.location.pathname);
+          // console.log("Test", window.location.pathname);
         } else if (
           !response.data.logged_in &&
           this.state.loggedInStatus === "LOGGED_IN"
