@@ -164,7 +164,7 @@ class App extends Component {
   //checks if the user is logged in
   checkLoginStatus() {
     axios
-      .get("http://crowdaxconnect.herokuapp.com/api/v1/logged_in", {
+      .get("https://crowdaxconnect.herokuapp.com/api/v1/logged_in", {
         withCredentials: true,
       })
       .then((response) => {

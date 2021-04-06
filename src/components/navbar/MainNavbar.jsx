@@ -12,7 +12,7 @@ class MainNavbar extends Component {
 
   handleLogoutClick() {
     axios
-      .delete("http://crowdaxconnect.herokuapp.com/api/v1/logout", {
+      .delete("https://crowdaxconnect.herokuapp.com/api/v1/logout", {
         withCredentials: true,
       })
       .then((response) => {
