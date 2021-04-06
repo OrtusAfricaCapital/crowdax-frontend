@@ -35,7 +35,7 @@ class SignUp extends Component {
 
     axios
       .post(
-        "https://crowdaxconnect.herokuapp.com/api/v1/registrations",
+        "http://crowdaxconnect.herokuapp.com/api/v1/registrations",
         {
           user: {
             email: email,

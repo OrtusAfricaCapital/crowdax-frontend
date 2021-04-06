@@ -30,7 +30,7 @@ export class Login extends Component {
 
     axios
       .post(
-        "https://crowdaxconnect.herokuapp.com/api/v1/sessions",
+        "http://crowdaxconnect.herokuapp.com/api/v1/sessions",
         {
           user: {
             email: email,
