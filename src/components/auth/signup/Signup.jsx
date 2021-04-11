@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
 import { Button, Col, Form, Row, Container, Card } from "react-bootstrap";
-import { Link, Redirect } from "react-router-dom";
+import { Formik } from "formik";
+
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 /* import googleIcon from "../../assests/google_icon.svg";
@@ -13,11 +15,13 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      first_name: "",
-      last_name: "",
+      firstname: "",
+      lastname: "",
       email: "",
       password: "",
       password_confirmation: "",
+      verified: "NOT_VERIFIED",
+      account_type: "INVESTOR",
       registrationErrors: "",
     };
 
@@ -27,20 +31,32 @@ class SignUp extends Component {
 
   //Prevents a signed user to access signup page
   componentDidUpdate() {
-    if (this.props.loggedInStatus == "LOGGED_IN") this.props.history.push("/");
+    if (this.props.loggedInStatus === "LOGGED_IN") this.props.history.push("/");
   }
 
   handleSubmit(event) {
-    const { email, password, password_confirmation } = this.state;
+    const {
+      firstname,
+      lastname,
+      email,
+      password,
+      password_confirmation,
+    } = this.state;
 
+    if (password !== password_confirmation) {
+    }
     axios
       .post(
-        "https://crowdaxconnect.herokuapp.com/api/v1/registrations",
+        "http://localhost:8000/api/v1/registrations",
         {
           user: {
+            firstname: firstname,
+            lastname: lastname,
             email: email,
             password: password,
             password_confirmation: password_confirmation,
+            verified: "NOT_VERIFIED",
+            account_type: "INVESTOR",
           },
         },
         {
@@ -48,7 +64,7 @@ class SignUp extends Component {
         }
       )
       .then((response) => {
-        console.log("data", response.data);
+        //   console.log("data", response.data);
 
         if (response.data.status === "created") {
           this.props.handleLogin(response.data);
@@ -82,12 +98,13 @@ class SignUp extends Component {
                 <Col sm={8}>
                   <h3 align="center ">Sign Up to Crowdax</h3>
                   <hr />
+
                   <Form onSubmit={this.handleSubmit}>
-                    {/* <Form.Group>
+                    <Form.Group>
                       <Form.Row>
                         <Col>
                           <Form.Control
-                            name="first_name"
+                            name="firstname"
                             placeholder="First name"
                             value={this.state.first_name}
                             onChange={this.handleChange}
@@ -96,7 +113,7 @@ class SignUp extends Component {
                         </Col>
                         <Col>
                           <Form.Control
-                            name="last_name"
+                            name="lastname"
                             placeholder="Last name"
                             value={this.state.last_name}
                             onChange={this.handleChange}
@@ -105,7 +122,7 @@ class SignUp extends Component {
                         </Col>
                       </Form.Row>
                     </Form.Group>
- */}{" "}
+
                     <Form.Group>
                       <Form.Control
                         type="email"
@@ -125,6 +142,9 @@ class SignUp extends Component {
                         onChange={this.handleChange}
                         required
                       />
+                      <Form.Text className="text-muted">
+                        Minimum length is 6 characters
+                      </Form.Text>
                     </Form.Group>
                     <Form.Group>
                       <Form.Control
@@ -133,6 +153,14 @@ class SignUp extends Component {
                         placeholder="Password Confirmation"
                         value={this.state.password_confirmation}
                         onChange={this.handleChange}
+                        required
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Check
+                        type="switch"
+                        id="agree-with-terms-switch"
+                        label="Agree with our terms and conditions"
                         required
                       />
                     </Form.Group>

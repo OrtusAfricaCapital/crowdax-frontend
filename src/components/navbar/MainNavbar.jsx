@@ -12,7 +12,7 @@ class MainNavbar extends Component {
 
   handleLogoutClick() {
     axios
-      .delete("https://crowdaxconnect.herokuapp.com/api/v1/logout", {
+      .delete("http://localhost:8000/api/v1/logout", {
         withCredentials: true,
       })
       .then((response) => {
@@ -42,7 +42,7 @@ class MainNavbar extends Component {
           <Nav className="ml-auto">
             <Nav.Link href="companies">Invest</Nav.Link>
             <Nav.Link>|</Nav.Link>
-            <Nav.Link href="raise">Raise</Nav.Link>
+            <span>{this.formatRaiseAccess()}</span>
           </Nav>
           <Nav className="ml-auto">
             <span>{this.formatLogInOut()}</span>
@@ -56,7 +56,7 @@ class MainNavbar extends Component {
     if (this.props.loggedInStatus === "LOGGED_IN") {
       return (
         <span>
-          <span className="navbarUsername">{this.props.user.email}</span>
+          <span className="navbarUsername">{this.props.user.firstname}</span>
           <Button
             variant="warning"
             size="lg"
@@ -79,6 +79,12 @@ class MainNavbar extends Component {
           </Link>
         </span>
       );
+  }
+
+  formatRaiseAccess() {
+    if (this.props.loggedInStatus === "LOGGED_IN")
+      return <Nav.Link href="raise">Raise</Nav.Link>;
+    else return <Nav.Link href="login">Raise</Nav.Link>;
   }
 }
 

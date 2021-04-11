@@ -139,7 +139,7 @@ class App extends Component {
           image: "https://picsum.photos/341/121",
           title: "ONLINE BUTCHERY",
           category: "E-commerce",
-          description:
+          short_description:
             "The Online Butchery is an online meat platform that is dedicated to delivering a variety of fresh meat and meat products to its clients",
           amount_raised: 13000,
           amount_targeted: 64000,
@@ -164,11 +164,15 @@ class App extends Component {
   //checks if the user is logged in
   checkLoginStatus() {
     axios
-      .get("https://crowdaxconnect.herokuapp.com/api/v1/logged_in", {
-        withCredentials: true,
-      })
+      .get(
+        "http://localhost:8000/api/v1/logged_in",
+
+        {
+          withCredentials: true,
+        }
+      )
       .then((response) => {
-        // console.log("logged in?", response.data.user);
+        //console.log("logged in?", response.data.user);
         if (
           response.data.logged_in &&
           this.state.loggedInStatus === "NOT_LOGGED_IN"
@@ -236,17 +240,13 @@ class App extends Component {
 
             <Route path="/raise" component={RaiseHome} />
 
-            <Route
-              path="/login"
-              render={(props) => (
-                <Login
-                  {...props}
-                  handleLogin={this.handleLogin}
-                  loggedInStatus={this.state.loggedInStatus}
-                  user={this.state.user}
-                />
-              )}
-            />
+            <Route path="/login">
+              <Login
+                handleLogin={this.handleLogin}
+                loggedInStatus={this.state.loggedInStatus}
+                user={this.state.user}
+              />
+            </Route>
 
             <Route
               path="/signup"
