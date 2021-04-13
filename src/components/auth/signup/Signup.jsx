@@ -46,7 +46,7 @@ class SignUp extends Component {
     }
     axios
       .post(
-        "/api/v1/registrations",
+        "registrations",
         {
           user: {
             firstname: firstname,
