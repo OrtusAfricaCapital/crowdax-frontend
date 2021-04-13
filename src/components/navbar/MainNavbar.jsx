@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import React, { Component } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ class MainNavbar extends Component {
 
   handleLogoutClick() {
     axios
-      .delete("http://localhost:8000/api/v1/logout", {
+      .delete("logout", {
         withCredentials: true,
       })
       .then((response) => {

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
 import { Button, Col, Form, Row, Container, Card } from "react-bootstrap";
-import { Formik } from "formik";
 
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../../../axios";
 
 /* import googleIcon from "../../assests/google_icon.svg";
 import facebookIcon from "../../assests/facebook_icon.svg";
@@ -20,7 +19,7 @@ class SignUp extends Component {
       email: "",
       password: "",
       password_confirmation: "",
-      verified: "NOT_VERIFIED",
+      verified: "false",
       account_type: "INVESTOR",
       registrationErrors: "",
     };
@@ -47,7 +46,7 @@ class SignUp extends Component {
     }
     axios
       .post(
-        "http://localhost:8000/api/v1/registrations",
+        "/api/v1/registrations",
         {
           user: {
             firstname: firstname,

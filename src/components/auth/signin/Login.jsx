@@ -6,7 +6,7 @@ import facebookIcon from "../../assests/facebook_icon.svg";
 import twitterIcon from "../../assests/twitter_icon.svg";
 import linkedinIcon from "../../assests/linkedin_icon.svg"; */
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../../../axios";
 
 export class Login extends Component {
   constructor(props) {
@@ -26,11 +26,11 @@ export class Login extends Component {
   }
 
   handleSubmit(event) {
-    const { email, password, password_confirmation } = this.state;
+    const { email, password } = this.state;
 
     axios
       .post(
-        "http://localhost:8000/api/v1/sessions",
+        "sessions",
         {
           user: {
             email: email,

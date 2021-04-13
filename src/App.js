@@ -4,13 +4,12 @@ import MainNavbar from "./components/navbar/MainNavbar";
 import HomeHeader from "./components/home/HomeHeader";
 import Footer from "./components/footer/Footer";
 import SignUp from "./components/auth/signup/Signup";
-
 import AllCampaigns from "./components/campaigns/AllCampaigns";
 import InvestmentDashboard from "./components/dashboard/InvestmentDashboard";
 import RaiseHome from "./components/raise/RaiseHome";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/auth/signin/Login";
-import axios from "axios";
+import axios from "./axios";
 import NotFoundPage from "./components/404/NotFoundPage";
 
 class App extends Component {
@@ -164,15 +163,11 @@ class App extends Component {
   //checks if the user is logged in
   checkLoginStatus() {
     axios
-      .get(
-        "http://localhost:8000/api/v1/logged_in",
-
-        {
-          withCredentials: true,
-        }
-      )
+      .get("logged_in", {
+        withCredentials: true,
+      })
       .then((response) => {
-        //console.log("logged in?", response.data.user);
+        console.log("logged in?", response.data.logged_in);
         if (
           response.data.logged_in &&
           this.state.loggedInStatus === "NOT_LOGGED_IN"
