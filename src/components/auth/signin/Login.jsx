@@ -49,6 +49,7 @@ export class Login extends Component {
       })
       .catch((error) => {
         console.log("Login Error", error);
+        this.state.LoginErrors = error;
       });
 
     event.preventDefault();
@@ -112,6 +113,7 @@ export class Login extends Component {
                       />{" "}
                     </Form.Group>
 
+                    <div className="text-danger">{this.state.LoginErrors}</div>
                     <Button variant="info" size="lg" type="submit">
                       Login
                     </Button>
