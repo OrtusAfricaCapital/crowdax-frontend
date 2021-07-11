@@ -22,7 +22,7 @@ export class Login extends Component {
   }
   //Prevents a signed user to access signup page
   componentDidUpdate() {
-    if (this.props.loggedInStatus == "LOGGED_IN") this.props.history.push("/");
+    //if (this.props.loggedInStatus == "LOGGED_IN") this.props.history.push("/");
   }
 
   handleSubmit(event) {
@@ -44,7 +44,8 @@ export class Login extends Component {
       .then((response) => {
         if (response.data.logged_in) {
           this.props.handleLogin(response.data);
-          this.props.history.push("/");
+         
+         // this.props.history.push("/");
         }
       })
       .catch((error) => {
